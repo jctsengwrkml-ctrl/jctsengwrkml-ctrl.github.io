@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>JC – Data Cleaning, SQL & OSINT Research</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef2f3;--ink:#12303a;--mute:#4d6670;--line:#c3d1d6;--card:#f8fbfb;--sig:#b8402a;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e2229;--ink:#e3eef1;--mute:#93aab2;--line:#26434d;--card:#142d36;--sig:#ee8a74}}
+:root[data-theme="dark"]{--bg:#0e2229;--ink:#e3eef1;--mute:#93aab2;--line:#26434d;--card:#142d36;--sig:#ee8a74}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.65 "Source Serif 4",Georgia,serif}
+main{max-width:760px;margin:0 auto;padding:56px 22px 72px}
+h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.15;margin:0}
+h1{font-size:clamp(2.2rem,6vw,3.4rem);font-weight:700;letter-spacing:-.02em}
+h2{font-size:1.5rem;margin:56px 0 18px;padding-bottom:8px;border-bottom:2px solid var(--ink)}
+h3{font-size:1.15rem}
+p{margin:0 0 14px;max-width:62ch}
+.lede{font-size:1.25rem;color:var(--mute);margin-top:16px}
+.stats{display:flex;flex-wrap:wrap;gap:12px;margin:28px 0 0;padding:0;list-style:none}
+.stats li{border-left:3px solid var(--sig);padding:2px 14px;font-family:"Bricolage Grotesque",system-ui,sans-serif}
+.stats b{display:block;font-size:1.6rem}
+.stats span{font-size:.9rem;color:var(--mute)}
+.svc{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.svc div{background:var(--card);border:1px solid var(--line);padding:16px 18px}
+.svc p{font-size:.95rem;color:var(--mute);margin:6px 0 0}
+.case{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--sig);padding:22px 24px}
+.case h4{font-family:"Bricolage Grotesque",system-ui,sans-serif;margin:18px 0 4px;font-size:1rem}
+.case ul{margin:0 0 6px;padding-left:20px}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.95rem}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);white-space:nowrap}
+th{font-family:"Bricolage Grotesque",system-ui,sans-serif}
+.tags{display:flex;flex-wrap:wrap;gap:8px;padding:0;list-style:none}
+.tags li{border:1px solid var(--line);padding:3px 11px;font-size:.9rem;background:var(--card)}
+a.cta{display:inline-block;margin-top:8px;background:var(--ink);color:var(--bg);padding:12px 22px;font-family:"Bricolage Grotesque",system-ui,sans-serif;font-weight:700;text-decoration:none}
+a:focus-visible{outline:3px solid var(--sig);outline-offset:3px}
+</style>
+</head>
+<body>
+<main>
+<h1>Messy data in. Clean, trustworthy data out.</h1>
+<p class="lede">I'm JC, a freelance data specialist in Metro Manila. I clean and merge messy datasets in SQL, and I run open-source investigations on companies, vessels and fraud patterns.</p>
+<ul class="stats">
+<li><b>48,510</b><span>tracking events merged</span></li>
+<li><b>98</b><span>CSV files unified</span></li>
+<li><b>15,900+</b><span>rows deduplicated</span></li>
+<li><b>100%</b><span>accuracy on 2 fraud-investigation operations</span></li>
+</ul>
+
+<h2>What I do</h2>
+<div class="svc">
+<div><h3>Data cleaning in SQL</h3><p>Deduplication, unique indexes, schema standardization, time zone fixes. PostgreSQL, MySQL, SQL Server.</p></div>
+<div><h3>OSINT and due diligence</h3><p>Company, vessel and identity research across public registries, with sources documented in the report.</p></div>
+<div><h3>Fraud and risk review</h3><p>Pattern analysis for sellers and small teams, drawn from two years of marketplace investigation work.</p></div>
+<div><h3>Small-business security setup</h3><p>Okta or JumpCloud onboarding, endpoint baselines, and staff security awareness sessions.</p></div>
+</div>
+
+<h2>Case study: 98 CSV files into one reliable table</h2>
+<div class="case">
+<h4>The problem</h4>
+<p>A maritime research team kept vessel tracking history in 98 separate CSV files with duplicates, inconsistent schemas and timestamps that had no time zone, so events could not be ordered reliably across regions.</p>
+<h4>What I did</h4>
+<ul>
+<li>Built a SQL extraction pipeline that cleaned and merged all 98 files (48,510 tracking events).</li>
+<li>Applied 8 targeted fixes to a 15,900+ row encounter dataset, including deduplication, unique indexing and schema standardization.</li>
+<li>Converted timestamps to time zone aware formats and added integrity constraints to the tracking tables.</li>
+<li>Validated the merged output against the source files before handing it over.</li>
+</ul>
+<h4>The result</h4>
+<p>One consistent, constraint-protected dataset where duplicates cannot re-enter and event times stay accurate across regions.</p>
+</div>
+
+<h2>Case study: investigating ownership and identity gaps</h2>
+<div class="case">
+<p>I cross-reference global registries such as Equasis, GISIS and the Tokyo MOU, plus corporate registries in the Philippines, Hong Kong and China, to find hull registration details, ownership links and tracking gaps. Each finding in a report lists its source so a client can verify it.</p>
+</div>
+
+<h2>Packages</h2>
+<div class="tbl"><table>
+<tr><th>Service</th><th>Typical scope</th><th>Delivery</th></tr>
+<tr><td>CSV and CRM cleanup</td><td>Up to 50k rows, one source</td><td>2 to 3 days</td></tr>
+<tr><td>Multi-file merge and schema design</td><td>Many files into one database</td><td>Quoted per project</td></tr>
+<tr><td>OSINT background report</td><td>One company or vessel</td><td>3 to 5 days</td></tr>
+<tr><td>IAM and security setup</td><td>Teams under 50 people</td><td>Quoted per project</td></tr>
+</table></div>
+
+<h2>Tools</h2>
+<ul class="tags">
+<li>PostgreSQL</li><li>MySQL</li><li>SQL Server</li><li>Python</li><li>Google Apps Script</li><li>Okta</li><li>JumpCloud</li><li>Active Directory</li><li>Burp Suite</li><li>Equasis</li><li>AIS data</li>
+</ul>
+
+<h2>Background</h2>
+<p>Information Systems at Mapúa University. Cybersecurity and OSINT training through the SANS summits (2025). Past work in fraud investigation, information security and maritime research. Fluent in English and Filipino.</p>
+
+<h2>Work with me</h2>
+<p>Send a short description and a sample of your data. I reply with a scope and a fixed price.</p>
+<a class="cta" href="mailto:jctsengwrkml@gmail.com">Email me</a>
+</main>
+</body>
+</html>
